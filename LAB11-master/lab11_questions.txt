@@ -1,0 +1,23 @@
+1. "sudo apt install gcc-arm-linux-gnueabi"
+
+2. "dpkg -L gcc-arm-linux-gnuebi"
+ Nous pouvons voir les exécutables installés dans /usr/bin
+
+3. J'ai vim le /home/student/.bashrc et j'ai rajouté 
+	export ARCH=arm
+	export CROSS_COMPILE=arm-linux-gnueabi-
+
+4. En tappant "arm" et en faisant une tabulation, on remarque qu'on a accès à "arm-linux-gnueabi" fonctions.
+
+5. cp des fichiers nécessaires
+	intégration du CROSS_COMPILE
+CC = ${CCP}gcc ${CC_OPTIONS}
+CC_OPTIONS = -g -Wall
+CCP = ${CROSS_COMPILE}
+
+6. netoyage de tous les fichiers avec "make clean"
+   execution du makefile avec "make"
+   Nous pouvons voir que la compilation ne peut pas se terminer suite a une erreur
+
+7. Execution du binaire avec "./prog_q5" : Le programme ne peut pas s'executer.
+   En effet, nous avons crée un executable en ARM et non en INTEL. Notre ordi ne peut pas l'executer.

@@ -1,0 +1,30 @@
+CC = gcc ${CC_OPTIONS}
+OBJ = max.o min.o var.o
+CC_OPTIONS = -g -Wall
+
+
+install: My-binaire_q5
+	./My-binaire_q5
+
+My-binaire_q5: test.o libbib.a
+	${CC} test.o libbib.a -o My-binaire_q5
+
+max.o: max.c
+	${CC} -c max.c -o max.o
+
+min.o: min.c
+	${CC} -c min.c -o min.o
+
+var.o: var.c
+	${CC} -c var.c -o var.o
+
+test.o: test.c
+	${CC} -c test.c -o test.o
+
+libbib.a: ${OBJ}
+	ar -cr libbib.a ${OBJ}
+	ranlib libbib.a
+
+clean: 
+	rm *.o *.a
+

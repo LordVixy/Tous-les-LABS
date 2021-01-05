@@ -1,0 +1,55 @@
+1. Copie des fichiers via la commande cp
+
+2. Compilation des fonctions avec "gcc -Wall -fPIC -c min.c max.c var.c"
+
+3.Création de la bibliothèque partagée "gcc -shared -o liboutils.so var.o min.o max.o"
+
+4. "mv liboutils.so ./opt/lib"
+
+5. Compilation du main "gcc main.c -L./opt/lib -loutils -o prog_q5"
+
+6. En exécutant on remaque que le compilateur ne trouve pas la bibliothèque dynamique.
+
+7. En effectuant la commande "echo $LD_LIBRARY_PATH" on constate qu'il est vide.
+
+8. Avec la commande "export LD_LIBRARY_PATH=~/LAB9/opt/lib" nous assossions la variable globale a notre chemin d'accès
+
+9. Compilation avec "gcc main.c -L./opt/lib -loutils -lm -o prog_q9" et execution du programme avec "./prog_q9" 
+ On constate le bon fonctionnement du programme !
+
+10.Pour modifier la variable globale de manière permanente, on "vim .bashrc" et on rajoute à la fin "export LD_LIBRARY_PATH=~/LAB9/opt/lib"
+
+11. Pour localiser cette bibliothèque, on utilise "whereis libm.so" qui nous donne :
+libm: /usr/lib/x86_64-linux-gnu/libm.a /usr/lib/x86_64-linux-gnu/libm.so
+
+12. En effectuant la commande "locate libm.so & ls-lrt" nous avons/lib/x86_64-linux-gnu/libm.so.6
+/snap/core18/1885/lib/i386-linux-gnu/libm.so.6
+/snap/core18/1885/lib/x86_64-linux-gnu/libm.so.6
+/snap/core18/1932/lib/i386-linux-gnu/libm.so.6
+/snap/core18/1932/lib/x86_64-linux-gnu/libm.so.6
+/snap/gnome-3-34-1804/36/usr/lib/x86_64-linux-gnu/libm.so
+/snap/gnome-3-34-1804/60/usr/lib/x86_64-linux-gnu/libm.so
+/snap/snapd/8542/lib/x86_64-linux-gnu/libm.so.6
+/snap/snapd/9721/lib/x86_64-linux-gnu/libm.so.6
+/usr/lib/x86_64-linux-gnu/libm.so
+Nous pouvons identifier le soname : lib.so.6
+et le nom réel : libm.so
+
+13. Copie de la bibliothèque avec "sudo cp ./opt/lib/liboutils.so /usr/lib"
+    On se place dans /usr/lib et on vérifie la présence du ficheir avec ls -lrt
+ On modifie les droits d'accès avec "sudo chmod -w liboutils.so"
+
+14. On met à jour le configuarateur de liens avec la commande "sudo ldconfig"
+
+15. On vérifie la mise à jour avec la commande "ldconfig -p | grep liboutils.so" On constate : 	liboutils.so (libc6,x86-64) => /lib/liboutils.so
+		liboutils.so (libc6,x86-64) => /usr/lib/liboutils.so
+
+16. On vérifie que le lien a bien été fait avec la commande "ldd /usr/bin/liboutils.so" on voit que "statically linked" Donc tout est bon !
+
+17. On supprime "LD_LIBRARY_PATH" dans le .bashrc
+ et "unset LD_LIBRARY_PATH" 
+ On vérifie avec la commande "echo $LD_LIBRARY_PATH" -> c'est bien vide !
+
+18. On recomplie main.c avec "gcc main.c -loutils.c -lm -o prog_q18"
+
+19. On constate le bon fonctionnement du programme !

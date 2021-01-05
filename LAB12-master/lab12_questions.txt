@@ -1,0 +1,32 @@
+1. "git clone https://github.com/u-boot/u-booy.git"
+
+2. "git checkout -b v2018.05"
+
+3. "git branch"
+
+4. Fichier "am335x_boneblack_vboot_defconfig"
+
+5. "make am335x_boneblack_vboot_defconfig"
+	le fichier .config bien crée
+	Ce fichier contient toutes les confidurations du boot
+	Ajout de CONFIG_SYS_PROMT
+
+6. "make" -> MLO et u-boot.img crées
+
+7. Carte Sd détécté "sudo lsblk -f"
+
+8. "sudo mount /dev/sdc1 ./"
+
+9.  " sudo fdisk -l" nous voyons la usb comme sdc1
+
+10. " sudo umount /dev/sdc1" le périphérique bien unmount
+
+11. "sudo dd if=dev/zero of=/dev/sdc1
+
+12. "cfdisk/dev/sdc1"
+	Nouvelle partition DOS crée
+	Changement du type au W95 FAT16(LBA)
+
+13. "sudo mkfs.vfat -F /dev/sdc1 -n boot" bien formaté
+
+14. Le média bien monté, les fichiers copiées.

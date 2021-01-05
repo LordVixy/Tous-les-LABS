@@ -1,0 +1,164 @@
+1. Copie des fichiers avec cp
+
+2. Création du makefile avec gedit: 
+
+install: My-binaire
+	./My-binaire
+
+My-binaire: test.o libbib.a
+	gcc -Wall test.o libbib.a -o My-binaire
+
+max.o: max.c
+	gcc -Wall -c max.c -o max.o
+
+min.o: min.c
+	gcc -Wall -c min.c -o min.o
+
+var.o: var.c
+	gcc -Wall -c var.c -o var.o
+
+test.o: test.c
+	gcc -Wall -c test.c -o test.o
+
+libbib.a: max.o min.o var.o
+	ar -cr libbib.a max.o min.o var.o
+	ranlib libbib.a
+
+clean: 
+	rm *.o *.a
+
+3. make -> exécution de tout le makefile du début jusqu'à la fin. Affiche tout le process et le résultat attendu.
+
+ make install -> exécution uniquement du nom sible "install", càd de l'execution du programme compilé -> affichage du résultat attendu.
+
+ make min.o -> exécution uniquement du nom sible "min.o", càd exécution du gcc pour créer le min.o à partir du min.c. Si min.o a déjà été crée, cette commande permet de update min.o.
+
+ make clean -> permet de supprimer les *.o et *.a pour économiser de la place.
+
+4.
+CC = gcc
+OBJ = max.o min.o var.o
+CC_OPTIONS =
+
+
+install: My-binaire_q4
+	./My-binaire_q4
+
+My-binaire_q4: test.o libbib.a
+	${CC} -Wall test.o libbib.a -o My-binaire_q4
+
+max.o: max.c
+	${CC} -Wall -c max.c -o max.o
+
+min.o: min.c
+	${CC} -Wall -c min.c -o min.o
+
+var.o: var.c
+	${CC} -Wall -c var.c -o var.o
+
+test.o: test.c
+	${CC} -Wall -c test.c -o test.o
+
+libbib.a: ${OBJ}
+	ar -cr libbib.a ${OBJ}
+	ranlib libbib.a
+
+clean: 
+	rm *.o *.a
+
+5.
+CC = gcc ${CC_OPTIONS}
+OBJ = max.o min.o var.o
+CC_OPTIONS = -g -Wall
+
+
+install: My-binaire_q5
+	./My-binaire_q5
+
+My-binaire_q5: test.o libbib.a
+	${CC} test.o libbib.a -o My-binaire_q5
+
+max.o: max.c
+	${CC} -c max.c -o max.o
+
+min.o: min.c
+	${CC} -c min.c -o min.o
+
+var.o: var.c
+	${CC} -c var.c -o var.o
+
+test.o: test.c
+	${CC} -c test.c -o test.o
+
+libbib.a: ${OBJ}
+	ar -cr libbib.a ${OBJ}
+	ranlib libbib.a
+
+clean: 
+	rm *.o *.a
+
+6.
+CC = gcc ${CC_OPTIONS}
+CC_OPTIONS = -g -Wall
+MAIN = test.o
+OBJ = max.o min.o var.o
+LIBRARY = libbib.a
+OUTPUT = My-binaire_q6
+
+install: ${OUTPUT}
+	./${OUTPUT}
+
+${OUTPUT}: ${MAIN} ${LIBRARY}
+	${CC} ${MAIN} ${LIBRARY} -o ${OUTPUT}
+
+%.o: %.c
+	${CC} -c $^ -o $@
+
+${LIBRARY}: ${OBJ}
+	ar -cr ${LIBRARY} ${OBJ}
+	ranlib ${LIBRARY}
+
+clean: 
+	rm *.o *.a
+
+7. Rajout du mode DEBUG:
+
+CC = gcc ${CC_OPTIONS}
+CC_OPTIONS = -g -Wall
+MAIN = test.o
+OBJ = max.o min.o var.o
+LIBRARY = libbib.a
+OUTPUT = My-binaire_q7
+DEBUG = no
+
+ifeq (${DEBUG},yes)
+
+all:
+	@echo "---------------DEBUG---------------"
+	rm *.o *.a
+	make install
+
+install: ${OUTPUT}
+	./${OUTPUT}
+
+${OUTPUT}: ${MAIN} ${LIBRARY}
+	${CC} ${MAIN} ${LIBRARY} -o ${OUTPUT}
+
+%.o: %.c
+	${CC} -c $^ -o $@
+
+${LIBRARY}: ${OBJ}
+	ar -cr ${LIBRARY} ${OBJ}
+	ranlib ${LIBRARY}
+	
+else
+
+install: ${OUTPUT}
+	@echo "---------------RELEASE---------------"
+	./${OUTPUT}
+endif
+
+8. Si on entre "make DEBUG=yes" -> on supprime tous les programmes innutiles et on refait tout le make
+ Si on entre "make" ou "make DEBUG=no", on n'a pas besoin de tout recompiler, on execute juste le programme.
+
+9. J'ai rajouté des echo pour qu'on voit bien dans quel mode on est.
