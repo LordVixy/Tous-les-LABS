@@ -1,0 +1,45 @@
+1. "git clone ..." Le fichier bien cloné
+	Pour rebooter, il faut faire un reset à l'allumage	
+
+2. Carte Bien inséré 
+
+3. Carte BeaglePort bien allumé
+
+4. USB s'affiche bien.
+
+5. "aapt install nom-outils"
+
+6. "ls -l /dev/ttyUSB0" -> nous n'avons pas accès
+	"sudo adduser student dialout" 
+	"reboot"
+	"cat /etx/group" -> on voit que student est dans la liste
+
+7. "picocom -b 115200 /dev/ttyUSB0"
+	Nous effectuons un changment de boot pour booter dans la MMC
+
+9. "help" -> on voit que saveenv existe.
+
+10. "env default -f -a" -> renitialisation de l'environnement
+	"saveenv" -> sauvegarde de l'environnement
+
+11. "setenv ipaddr 192.168.0.100" ip de la carte
+    "setenv ipaddr 192.168.0.1" ip du PC
+    "setenv ethaddr 12:34:56:ab:cd:ef" ip mac de la carte
+
+12. "saveenv" sauvegarde de nos changments
+
+13.14. Tout bien branché
+
+15. "ifconfig -a" -> et "sudo apt-get install net-tools"
+
+16. on voit que le lien ethernet se nomme 'ens33'
+	On le configure pour la communication.
+
+17. Redémarrage du network du PC "sudo :etc/init.d/networking restart"
+
+18. "sudo apt install tftpd-hpa"
+	On restart la carte pour qu'elle applique les changements
+	Création d'un fichier test.txt avec un message "hello world" dans /var/lib/tftpboot
+
+19. sur le terminal de la carte on copie les fichiers sur le pc avec la commande"tftp 0x81000000 test.txt"
+	Avec la commande "md 0x81000000" on voit que le transfert a été effectué, dans cette mémoire on voit 'Hello World !'

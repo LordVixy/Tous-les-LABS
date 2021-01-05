@@ -1,0 +1,87 @@
+1. utilisation du git clone ...
+
+2. utilisation du git branch
+
+3. "sudo apt install tree"
+
+4. "tree -L 1" on voit :
+.
+├── arch
+├── block
+├── certs
+├── COPYING
+├── CREDITS
+├── crypto
+├── Documentation
+├── drivers
+├── firmware
+├── fs
+├── include
+├── init
+├── ipc
+├── jenkins_build.sh
+├── Jenkinsfile
+├── Kbuild
+├── Kconfig
+├── kernel
+├── lib
+├── MAINTAINERS
+├── Makefile
+├── mm
+├── net
+├── README
+├── README.md
+├── samples
+├── scripts
+├── security
+├── sound
+├── ti_config_fragments
+├── tools
+├── usr
+└── virt
+
+23 directories, 10 files
+
+5. Le total du fichier Linux est de 3G
+	"du -sh */ | sort -hr"
+525M	drivers/
+144M	arch/
+41M	Documentation/
+39M	include/
+39M	fs/
+35M	sound/
+31M	net/
+23M	tools/
+8.2M	kernel/
+4.4M	lib/
+3.7M	mm/
+3.5M	scripts/
+3.3M	crypto/
+2.7M	security/
+1.8M	block/
+1.2M	samples/
+676K	virt/
+248K	ipc/
+184K	init/
+156K	firmware/
+144K	ti_config_fragments/
+52K	certs/
+40K	usr/
+
+On remarque que le fichier le plus lourd est le driver/
+C'est normal car il contient toutes les libraires importantes pour le software et le hardware.
+
+6. on va dans ~/LAV14/linux/arch/arm/configs et on tape ls
+	on repére le fichier : bb.org_defconfig
+
+7."make bb.org_defconfig" -> génération du .config
+
+8. le fichier .config contient toutes les configuraations importantes de la carte. C'est un fichier modifiable pour configurer le software par rapport à notre usage sur la carte BB.
+
+9. Ouverture du fichier avec "xconfig .config" -> modification des variables demandées. 
+
+10. 11. 12. 13. Tout bien modifié.
+
+14. "make -j 4"
+
+15. Copie des fichiers nécessaires dans /var/lib/tftpboot
