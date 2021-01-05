@@ -1,0 +1,15 @@
+1.	"echo" -> HOME=/home/student
+
+2.	"echo $PATH" -> renvoi /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+
+3.	script "show_process" crée
+
+4.	"sudo mv show_process /opt"
+
+5.	"chmod u+rx show_process"
+
+6.	la commande "./show_process" ne s'execute pas à partir de /home
+
+7.	J'ai utilisé la commande "echo $PATH" pour voir les chemins d'accès des programmes executables. j'ai repéré le script zip dans /usr/bin
+
+8.	"show_process" s'execute à partir de /home
