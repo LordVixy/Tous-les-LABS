@@ -1,0 +1,74 @@
+1. git clone ...
+
+2. Dans /busybox on fait "git branch -a"
+	on voit :
+* master
+  remotes/origin/0_60_stable
+  remotes/origin/1_00_stable
+  remotes/origin/1_00_stable_10817
+  remotes/origin/1_10_stable
+  remotes/origin/1_11_stable
+  remotes/origin/1_12_stable
+  remotes/origin/1_13_stable
+  remotes/origin/1_14_stable
+  remotes/origin/1_15_stable
+  remotes/origin/1_16_stable
+  remotes/origin/1_17_stable
+  remotes/origin/1_18_stable
+  remotes/origin/1_19_stable
+  remotes/origin/1_1_stable
+  remotes/origin/1_20_stable
+  remotes/origin/1_21_stable
+  remotes/origin/1_22_stable
+  remotes/origin/1_23_stable
+  remotes/origin/1_24_stable
+  remotes/origin/1_25_stable
+  remotes/origin/1_26_stable
+  remotes/origin/1_27_stable
+	Plein de versions.
+
+3. On se met sur la bonne branche avec "git checkout 1_29_stable"
+	on vérifie que'on est sur la bonne branche avec "git branch"
+	on voit 
+ * 1_29_stable
+  master
+	on est donc dans la bonne branche.
+
+5. "make defconfig" on voit la bonne génération du .config
+
+6. "make gconfig" allume le GUI
+
+7.8.9. Tout bien modifié et enregistré
+
+10. "make" puis "make install" -> fichier nfsroot bien crée 
+
+11. "tree -L 1" on voit :
+.
+├── bin
+├── linuxrc -> bin/busybox
+├── sbin
+└── usr
+
+On voit les fichiers principaux dans root file system. avec les sources de linux qui renvoient vers bin/busybox.
+
+12. On crée les répertoires avec mkdir
+
+13. On copie le inittab dans notre kernel etc/inittab
+
+14. On modifie l'inittab avec vim
+
+15. On git clone les fichiers nécessaires
+
+16. Le fichier rcS bien crée dans le répertoire init.d qui se trouve dans etc
+
+17. "setenv bootargs root=:dev/nfs ip=192.168.0.100:::::eth0 nfsroot=192.168.0.1:/home:student/LAB16/nfsroot,nfsvers=3rw"
+ et "saveenv"
+
+18. "sudo apt install nfs-kernel-server"
+
+19. Création avec mkdir et on vim avec la phrase : /home/student/LAB16/nfsroot 192.168.0.100(rw,no_root_squash,no_subtree_check)
+
+20. Reboot du server avec : sudo /etc/init.d/nfs-kernel-server restart
+	Serveur bien rebooté
+
+21. Après avoir rebooté, on voit que le système ne boot toujours pas. J'ai donc fait une erreur quelque part. Malheuresement je n'ai plus le temps ... Merci pour ce Tp très intéressant !!! 
