@@ -1,0 +1,26 @@
+1.	"git clone https://github.com/khachicha/5AS05-partie4;git"
+2.	"history"
+3.	"history > history.txt"
+4.	"cat ./sardar/* >./sardar_power.txt"
+5.	"wc -lwm" il y a 1980 lignes, 16783 mots, 101778 caractères
+6.	"grep -i singh sardar_power.txt"
+7.	"rm sardar_power.txt"
+8.	"grep -ir singh ./sardar"
+9.	"grep -ir singh ./sardar | wc -l" on voit qu'il y a 123 lignes.
+10.	"grep -ir singh ./sardar | grep -i santa | wc -l" affiche qu'il y a 42 lignes
+11.	"grep -ir singh ./sardar | grep -i santa | grep -vi banta | wc -l" affiche qu'il y a 26 lignes
+12.	"find . -name "*.txt""
+13.	"cp answering-machine.txt test-commande-locate.txt" en utilisant la commande "locate test-commande-locate.txt", on constate qu'on ne peut pas trouver ce ficher.
+14.	"sudo updatedb", ensuite en effectuant la commande "locate test-commande-locate.txt", le locate marche et nous donne le bon chemin d'accès : /home/student/LAB4/test-commande-locate.txt
+15.	"diff novau.v1 noyau.v2" Nous pouvons voir les lignes ou c'est différent avec les valeurs des différentes variables :
+	< PATCHLEVEL = 01
+	< SUBLEVEL = -rc1
+	---
+	> PATCHLEVEL = 02
+	> SUBLEVEL = -rc2
+	---
+	< export	SHELL CC GCC
+	---
+	> export	SHELL
+16.	"diff -u noyau.v1 noyau.v2 > update.patch" puis "patch noyau.v1 < update.patch" update parfait !
+ 

@@ -1,0 +1,384 @@
+    1  q
+    2  a
+    3  aa
+    4  a
+    5  aa
+    6  sudo apt-get install vim
+    7  sudo apt install libssl-dev bison flex
+    8  sudo apt install qt5-default pkg-config
+    9  ls
+   10  *
+   11  ls
+   12  time
+   13  ls
+   14  time
+   15  date
+   16  ls
+   17  date
+   18  ls
+   19  *
+   20  ls
+   21  cd Desktop/
+   22  ls
+   23  *
+   24  ls
+   25  help
+   26  pwd
+   27  sudo apt i,stall git gitk git-email
+   28  sudo apt install git gitk git-email
+   29  clear
+   30  git config --global user.name "Valery"
+   31  git config --global user.email valery.bereznyak@gmail.com
+   32  clear
+   33  --global user.name
+   34  config
+   35  git config 
+   36  git config --global user.name
+   37  git config --global user.email
+   38  clear
+   39  help mkdir
+   40  info mkdir
+   41  mkdir lab2
+   42  pwd
+   43  cd
+   44  ls
+   45  cd lab2
+   46  ls
+   47  pwd
+   48  cat BEREZNYAK
+   49  cat BEREZNYAK.txt
+   50  cat > BEREZNYAK.txt
+   51  cd lab2
+   52  pwd
+   53  ls
+   54  vim BEREZNYAK.txt
+   55  vim lab2_questions.txt
+   56  cat lab2_questions.txt
+   57  cat > test.txt
+   58  cd lab2
+   59  ls
+   60  vim lab2_questions.txt
+   61  vim test.txt
+   62  ls
+   63  rmv test.txt
+   64  delete test.txt
+   65  remove test.txt
+   66  git remove test.txt
+   67  git rm test.txt
+   68  vim help
+   69  vim BEREZNYAK.txt 
+   70  git rm .help.swp 
+   71  rm ~help.swp
+   72  rm ~.help.swp
+   73  rm ~help.swp
+   74  ~rm help.swp
+   75  ~rm .help.swp
+   76  clear
+   77  cd
+   78  clear
+   79  ls
+   80  cd lab2
+   81  ls
+   82  cleara
+   83  clear
+   84  git init help
+   85  ls
+   86  git add help
+   87  ls
+   88  git status
+   89  git init
+   90  git status
+   91  git add BEREZNYAK.txt 
+   92  git add lab2_questions.txt 
+   93  git status
+   94  git  commit -m "LAB2.V1"
+   95  git status
+   96  git ignore .BEREZNYAK.txt.swp
+   97  git --ignore .BEREZNYAK.txt.swp
+   98  rm .BEREZNYAK.txt.swp 
+   99  ls
+  100  rm .help.swp 
+  101  got status
+  102  git status
+  103  clear
+  104  git status
+  105  git init
+  106  git commit
+  107  git status
+  108  get is file
+  109  git is file
+  110  vim lab2_questions.txt 
+  111  git status
+  112  git add lab2_questions.txt 
+  113  git commit 
+  114  git status
+  115  git remote add origin https://github.com/LordVixy/LAB2.git
+  116  git push -u origin master
+  117  git pull
+  118  git status
+  119  cd ~
+  120  pwd
+  121  ls
+  122  git clone https://github.com/LordVixy/LAB2.git
+  123  ls
+  124  cd lab2
+  125  ls
+  126  vim lab2_questions.txt 
+  127  git pull
+  128  git status
+  129  git add lab2_questions.txt 
+  130  git pull
+  131  git status
+  132  git push -u origin
+  133  ls
+  134  git commit
+  135  git status
+  136  git push -u origin
+  137  cd ~
+  138  ls
+  139  rm lab2
+  140  git clone https://github.com/khachicha/5AS05-partie3.git
+  141  ls
+  142  git mv 5AS05-partie3 LAB3
+  143  git mv 5AS05-partie3/ LAB3
+  144  cd LAB3
+  145  ls
+  146  vim lab3_questions
+  147  clear
+  148  ls
+  149  lrt
+  150  ls -lrt
+  151  cd sardar
+  152  ls
+  153  ls-lrt
+  154  ls -lrt
+  155  ~cd
+  156  ~ cd
+  157  ~
+  158  ~ ls
+  159  cd ~
+  160  cd lab3
+  161  cd LAB3
+  162  vim lab3_questions 
+  163  ls
+  164  du Microsoft
+  165  ls Microsoft 
+  166  vim lab3_questions 
+  167  ls -lrt
+  168  du Microsoft
+  169  du -hs Microsoft 
+  170  stat Microsoft 
+  171  lsh 
+  172  lh Microsoft
+  173  ls -h
+  174  ls
+  175  du -sh Microsoft 
+  176  clear
+  177  stat Microsoft 
+  178  ls -a
+  179  ls
+  180  ls -r
+  181  ls -t
+  182  ls -t -r
+  183  ls -l
+  184  ls -l -t
+  185  ls -lt
+  186  ls -lrt
+  187  ls -lrs
+  188  ls -s
+  189  ls -ls
+  190  ls -rs
+  191  -ls -ls
+  192  ls -ls
+  193  ls -lrs
+  194  cat answering-machine.txt 
+  195  vi answering-machine.txt 
+  196  less answering-machine.txt 
+  197  vim answering-machine.txt 
+  198  more answering-machine.txt 
+  199  vim answering-machine.txt 
+  200  vim answering-machine.txt /gravelly
+  201  vim answering-machine.txt
+  202  tail answering-machine.txt -n 20
+  203  vim Microsoft
+  204  grep trust Microsoft 
+  205  grep money
+  206  cd LAB3
+  207  grep money ~
+  208  grep money .
+  209  grep money /home/student/LAB3
+  210  grep -r /home/student/LAB3
+  211  grep money -r /home/student/LAB3
+  212  grep money -r ~LAB3
+  213  grep money -r ~/LAB3
+  214  grep Money -r ~/LAB3
+  215  ls -a
+  216  mv .lightbulb lightbulb
+  217  ls
+  218  cd sardar
+  219  ls
+  220  ~
+  221  ~cd
+  222  ~
+  223  ~ls
+  224  ~
+  225  clear
+  226  cd..
+  227  cd ..
+  228  cd sardar | ls
+  229  cd sardar
+  230  cd ..
+  231  cd sardar / ls
+  232  cd sardar |/ ls
+  233  cd sardar
+  234  mv sardar3.txt cd ..
+  235  mv sardar3.txt back
+  236  mv sardar3.txt bak
+  237  mv sardar3.txt ~
+  238  mv sardar3.txt ..
+  239  ls
+  240  ..
+  241  cd ..
+  242  ls
+  243  rm Microsoft 
+  244  ls
+  245  mkdir archive
+  246  ls
+  247  git init
+  248  git add *
+  249  git status
+  250  git commit
+  251  git remote add origin https://github.com/LordVixy/LAB3.git
+  252  git push -u origin master
+  253  git remove origin 
+  254  git remote remove origin 
+  255  git remote add origin https://github.com/LordVixy/LAB3.git
+  256  git push -u origin master
+  257  exit
+  258  cd LAB3
+  259  vim lab3_questions 
+  260  cd LAB3
+  261  du -hs Microsoft
+  262  ls
+  263  cd LAB3
+  264  pwd
+  265  rm archive
+  266  ls
+  267  mr -r archive
+  268  rm -r archive
+  269  ls
+  270  cd ..
+  271  mkdir archive
+  272  cp -a ~LAB3 home/student/archive
+  273  cp -a home/sutdent/LAB3 home/student/archive
+  274  cp -a home/student/LAB3 home/student/archive
+  275  pwd
+  276  cp -a /home/student/LAB3 /home/student/archive
+  277  mv /home/student/archive /home/student/LAB3
+  278  ls
+  279  cd LAB3
+  280  ls
+  281  ls archive
+  282  ls ls
+  283  ls
+  284  clear
+  285  ls
+  286  ls -s sardar/ shortcut
+  287  ls
+  288  ls -s ../sardar/ 
+  289  ls -s ../sardar 
+  290  ls -s LAB3 sardar/ 
+  291  ls -s ../sardar/ 
+  292  clear
+  293  ln -s ../sardar 
+  294  ln -s ../sardar/ 
+  295  ln -s sardar/* 
+  296  ls
+  297  ln -s sardar/* clear
+  298  clear
+  299  ln -s sardar/* clear
+  300  clear
+  301  ln -s sardar/* 
+  302  ln -s sardar/* ./
+  303  ls
+  304  clear
+  305  ls
+  306  rm ~sardar/sardar2.txt
+  307  rm ~/sardar/sardar2.txt
+  308  cd sardar
+  309  ls
+  310  cd ..
+  311  rm ~/sardar/sardar2.txt
+  312  rm ~/LAB3/sardar/sardar2.txt
+  313  ls
+  314  clear
+  315  vim ~/sardar/sardar1.txt
+  316  cd sardar
+  317  ls
+  318  vim sardar1.txt 
+  319  cd ..
+  320  vim ~/sardar/sardar1.txt
+  321  vim /sardar/sardar1.txt
+  322  ls
+  323  vim sardar1.txt 
+  324  ls
+  325  ls -l
+  326  cd sardar
+  327  ls -lrt
+  328  chmod u-w sardar1.txt
+  329  ls -lrt
+  330  chmod u+w sardar1.txt
+  331  ls -lrt
+  332  cd ..
+  333  cd..
+  334  cd ..
+  335  ls
+  336  rm lab2
+  337  rm -r lab2
+  338  ls
+  339  tar cvf /home/LAB3.tar /home
+  340  ls -lrt
+  341  tar cvf LAB3.tar
+  342  tar cvf LAB3.tar /home
+  343  ls
+  344  bzip2 LAB3.tar
+  345  ls
+  346  ls -bzip2 LAB3.tar.bz2
+  347  tar -tvf LAB3.tar
+  348  tar -tvf LAB3.tar.bz2
+  349  clear
+  350  ls
+  351  mv LAB3.tar.bz2 LAB3
+  352  ls
+  353  cd LAB3
+  354  git status
+  355  git add *
+  356  git status
+  357  git commit -m "LAST UPDATE"
+  358  git push -u origin master
+  359  cd ..
+  360  clear
+  361  ls
+  362  rm -r lab2
+  363  ls
+  364  rmdir lab2
+  365  rmdir -r lab2
+  366  rm -rI lab2
+  367  ls
+  368  mkdir LAB4
+  369  ls
+  370  cd LAB4
+  371  git clone https://github.com/khachicha/5AS05-partie4.git
+  372  ls
+  373  mv 5AS05-partie4 ../
+  374  ls
+  375  cd ..
+  376  ls
+  377  rm -r LAB4
+  378  ls
+  379  mv 5AS05-partie4/ LAB4
+  380  ls
+  381  cd LAB4
+  382  cd ..
+  383  history
+  384  history > history.txt
