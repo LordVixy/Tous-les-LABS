@@ -1,0 +1,15 @@
+1. 	/cd lab2
+	cat > BEREZNYAK.txt :: creer ficher txt
+	vim BEREZNYAK.txt : enter fichier txt
+	[ESC] key to save and SHIFT+Z+Z to get back to terminal
+3.	git init
+4.	git status	
+5.	git add BEREZNYAK.txt
+6.	git commit -m "LAB2.V1"
+7.	Compte crée Nickname = "LordVixy"
+8.	Tout copié vers le GITHUB
+	git remote add origin https://github.com/LordVixy/LAB2
+	git push -u origin master
+9.	README crée sur GitHub
+10.	git pull == mise a jour
+11.	git clone https://github.com/LordVixy/LAB2
