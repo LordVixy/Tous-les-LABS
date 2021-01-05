@@ -1,0 +1,47 @@
+1. Copie des fichiers nécessaires avec cp
+
+2. "gcc -Wall -c min.c max.c" -> Compilation et génération des *.o
+
+3. "ar -r liboutils.a max.o min.o" -> création de l'archive bibliothèque
+
+4. "ar -t liboutils.a" -> affiche les fichiers objets présents :: les fichiers sont bien présent
+
+5. "ranlib liboutils.a" -> permet de créer un index qui permet d'accélérer la phase d'édition de liens.
+
+6. J'ai move et gedit le test.c du LAB7 et tout est bon
+
+7. Création des répertoires avec mkdir 
+
+8. "mv min.h max.h ./opt/include"
+   "mv liboutils.a ./opt/lib"
+
+9."gcc main.c -L./opt/lib -I./opt/include -loutils -o prog_q9"
+
+10. Génération de l'executable -> affichage du maximum et minimum
+
+11. Récupération des fichiers var.c et var.h avec cp
+ Compilation du var.c avec "gcc -c var.c" et génération du var.o
+ Move du var.h en ./opt/include avec "mv var.h ./opt/include"
+ Suppression du fichier innutile "rm var.c"
+ Rajout du var.o dans la librairie "ar -r ./opt/lib/liboutils.a var.o"
+
+12. Vérification du rajout "ar -t ./opt/lib/liboutils.a"
+ Suppression du fichier innutile "rm var.o"
+
+13. Regénération de l'archive avec "ranlib ./opt/lib/liboutils.a"
+ Vérification du rajout avec "nm -s ./opt/lib/liboutils.a"
+ On remarque que le fichier var.o a été bien rajouté à l'archive
+
+14. Modification du main.c pour rajouter la variance.
+ Génération de l'executable avec "gcc main.c -L./opt/lib -I./opt/include -loutils -o prog_q14"
+ Vérification du bon fonctionnement avec "./prog_q14"
+ On constate que le min, max et la variance sont bien calculées.
+
+15. On rajoute la bibliothèque <math.h> et les fonctions floor et ceil dans le main.c
+
+16. On compile avec la fonction "gcc main.c -L./opt/lib -I./opt/include -loutils -lm -o prog_q16"
+ On execute avec "./prog_q16"
+ On constate que la fonction ceil arrondi au suppérieur et la fonction floor arrondi au inférieur.
+
+
+
