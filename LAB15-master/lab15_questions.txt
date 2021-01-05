@@ -1,0 +1,11 @@
+1. "tftp 0x81000000 zImage"
+	"tftp 0x82000000 am335x-boneblack.dtb"
+	Vérification du téléchargement avec la commande md
+	Tout bien téléchargé
+2. "bootz 0x81000000 - 0x82000000"
+	la carte essaie de demarre mais plant car il n'y a pas de root file system.
+
+3. "setenv bootcmd "tftp 0x81000000 zImage ; tftp 0x82000000 am335x-boneblack.dtb ; bootz 0x81000000 - 0x82000000' "
+
+4. Après le reset, on voit que le boot les commandes on bien focntionné mais comme avant , le kernel ne s'execute pas. 
+	
